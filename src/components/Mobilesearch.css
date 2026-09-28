@@ -1,0 +1,168 @@
+.mobile-searchv{
+    display: none ! important;
+}
+
+
+/* Tablet and above */
+@media (min-width: 768px) {
+     .mobile-searchv{
+          display: block ! important;
+        position: fixed ! important;
+        width: 94%;
+        margin-top: 30px ! important;
+        background-color: white ! important;
+                border-radius: 50px ! important;
+
+       
+        
+      
+    }
+}
+
+/* Mobile only */
+@media (max-width: 767px) {
+    .mobile-searchv{
+        display: block ! important;
+        position: fixed ! important;
+        width: 94%;
+        margin-top: 30px ! important;
+        background-color: white ! important;
+                border-radius: 50px ! important;
+
+        z-index: 1 ! important;
+       
+        
+        
+    
+     
+    }
+}
+
+/* ================================
+   1200px+ → DESKTOP
+================================ */
+@media (min-width: 1200px) {
+
+  /* Desktop CSS */
+  .mobile-searchv{
+    display: none ! important;
+}
+
+
+}
+
+
+/* ================================
+   992px – 1199px → DESKTOP / LAPTOP
+================================ */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .mobile-searchv{
+    display: none ! important;
+}
+
+
+  /* Laptop CSS */
+
+}
+
+
+/* ================================
+   768px – 991px → TABLET
+================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* Tablet CSS */
+  .mobile-searchv{
+    margin-top: 30px ! important;
+    width: 72% ! important;
+    margin-bottom: 10px ! important;
+    
+}
+ .nav-searceh{
+        display: none ! important;
+    }
+
+}
+
+
+/* ================================
+   576px – 767px → HAMBURGER MOBILE
+================================ */
+@media (min-width: 576px) and (max-width: 767px) {
+
+  /* Mobile CSS */
+   .mobile-searchv{
+        display: block ! important;
+        position: fixed ! important;
+        width: 94%;
+        margin-top: 30px ! important;
+        background-color: whiete ! important;
+        z-index: 1 ! important;
+        border-radius: 50px ! important;
+       
+        
+        
+    
+     
+    }
+    .nav-searceh{
+        display: none ! important;
+    }
+
+}
+
+
+/* ================================
+   Below 576px → SMALL MOBILE
+================================ */
+@media (max-width: 575px) {
+
+  /* Small Mobile CSS */
+    .mobile-searchv{
+        display: block ! important;
+        position: fixed ! important;
+        width: 94%;
+        margin-top: 30px ! important;
+        background-color: white! important;
+                border-radius: 50px ! important;
+
+        z-index: 1 ! important;
+       
+        
+        
+    
+     
+    }
+      .nav-searceh{
+        display: none ! important;
+    }
+
+}
+
+
+/* ================================
+   Below 400px → EXTRA SMALL
+================================ */
+@media (max-width: 399px) {
+
+   .mobile-searchv{
+        display: block ! important;
+        position: fixed ! important;
+        width: 94%;
+        margin-top: 30px ! important;
+        background-color: whiete ! important;
+        z-index: 1 ! important;
+        border-radius: 50px ! important;
+       
+        
+        
+    
+     
+    }
+    .nav-searceh{
+        display: none ! important;
+    }
+
+}
+
+ 
