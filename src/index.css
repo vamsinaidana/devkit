@@ -1,35 +1,5 @@
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
- 
- 
- 
- 
- 
- 
- 
- 
  .marquee-wrapper {
   width: 100%;
   overflow: hidden;
@@ -56,11 +26,10 @@
   gap: 8px;
 
   background: transparent;
-  border: 1px solid rgb(1, 1, 14);
+  border: 1px solid #1383a8;
   border-radius: 15px;
 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-
+ 
   white-space: normal;
   transition: 0.3s ease;
 }
@@ -378,7 +347,7 @@
   background: #3978e6;
   border-color: #3978e6;
 }
-
+ 
 
 /* =========================
    SMALL TEXT / MUTED

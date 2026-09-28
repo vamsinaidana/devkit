@@ -5,7 +5,7 @@ import {showdata} from "../components/data/catagories";
 const Cheetshets = () => {
   return (
     <div className=''>
-       <section className="cheatsheets py-5 top-animation" id="cheetsheets" >
+       <section className="cheatsheets py-5" id="cheetsheets" >
       <div className="container" id="cheetsheets-html-css-js-bootstrap-tailwind-mern-mean-django-python-java-springboot-sql-ts">
 
       <div className="project-heading text-center mb-4 mb-md-5">
@@ -26,7 +26,7 @@ const Cheetshets = () => {
         </div>
 
 
-        <div className="cheatsheet-scroll top-animation">
+        <div className="cheatsheet-scroll">
 
           {/* ROW 1 */}
           <div className="cheatsheet-row">

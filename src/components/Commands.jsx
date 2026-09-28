@@ -200,26 +200,13 @@ const Commands = () => {
 
 
                 {/* git pull */}
-                <div className="git-command-item">
-                  <code>git pull</code>
+                 <div className="git-command-item">
+                  <code> For more visit git commands <i className="fa-solid fa-arrow-right"></i></code>
 
-                  <button
-                    className={`git-copy-btn ${
-                      copied === "git pull" ? "copied" : ""
-                    }`}
-                    onClick={() => copyCommand("git pull")}
-                  >
-                    <i
-                      className={`fa-solid ${
-                        copied === "git pull"
-                          ? "fa-check"
-                          : "fa-copy"
-                      }`}
-                    ></i>
-
-                    {copied === "git pull" ? "Copied" : "Copy"}
-                  </button>
+                   
                 </div>
+
+                
 
               </div>
 
@@ -529,17 +516,7 @@ const Commands = () => {
                 <div className="git-command-box">
                   <code>git clone &lt;repository-url&gt;</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        "git clone <repository-url>"
-                      )
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                  
                 </div>
 
               </div>
@@ -568,15 +545,7 @@ const Commands = () => {
                 <div className="git-command-box">
                   <code>git init</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText("git init")
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                
                 </div>
 
               </div>
@@ -604,16 +573,7 @@ const Commands = () => {
 
                 <div className="git-command-box">
                   <code>git add .</code>
-
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText("git add .")
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+ 
                 </div>
 
               </div>
@@ -642,17 +602,7 @@ const Commands = () => {
                 <div className="git-command-box">
                   <code>git commit -m "message"</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        'git commit -m "message"'
-                      )
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                  
                 </div>
 
               </div>
@@ -679,19 +629,11 @@ const Commands = () => {
                 </p>
 
                 <div className="git-command-box">
-                  <code>git push origin main</code>
+                  <code>git add .<br></br>
+git commit -m "Updated DevKit"<br></br>
+git push</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        "git push origin main"
-                      )
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                  
                 </div>
 
               </div>
@@ -720,17 +662,7 @@ const Commands = () => {
                 <div className="git-command-box">
                   <code>git pull origin main</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        "git pull origin main"
-                      )
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                  
                 </div>
 
               </div>
@@ -759,17 +691,7 @@ const Commands = () => {
                 <div className="git-command-box">
                   <code>git branch feature-name</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        "git branch feature-name"
-                      )
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                  
                 </div>
 
               </div>
@@ -798,17 +720,7 @@ const Commands = () => {
                 <div className="git-command-box">
                   <code>git merge branch-name</code>
 
-                  <button
-                    type="button"
-                    className="git-copy-btn"
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        "git merge branch-name"
-                      )
-                    }
-                  >
-                    <i className="fa-regular fa-copy"></i>
-                  </button>
+                  
                 </div>
 
               </div>

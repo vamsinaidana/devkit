@@ -281,7 +281,11 @@ const Navbar = ({ mode, setMode }) => {
 
         {/* Dark Mode */}
         <button
-          onClick={() => setMode(!mode)}
+        
+          onClick={() => {
+  setMode(!mode);
+  setNavbarOpen(false);
+}}
           className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
           style={{
             width: "40px",
@@ -334,10 +338,20 @@ const Navbar = ({ mode, setMode }) => {
             {/* Modal Header */}
             <div className="d-flex align-items-center justify-content-between p-4 border-bottom">
 
-              <h4 className="mb-0 fw-bold">
+              {/* <h4 className="mb-0 fw-bold">
                 Login to DevKit
-              </h4>
-
+              </h4> */}
+          <img
+  src="/logo (2).png"
+  alt="DevKit"
+  className="img-fluid"
+  style={{
+    width: "150px",
+    height: "50px",
+    objectFit: "contain",
+    
+  }}
+/>
               <button
                 type="button"
                 className="btn-close"

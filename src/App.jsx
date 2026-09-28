@@ -11,6 +11,7 @@ import Cheetshets from './components/Cheetshets'
 import Commands from './components/Commands'
 import Resources from './components/Resources'
 import Login from './components/Login'
+import Loder from './components/Loder'
 import './App.css'
 import './index.css'
  
@@ -20,6 +21,8 @@ import Developer from './components/Developer'
  
 
 function App() {
+
+  
   
   const [mode, setMode] = useState(false);
    useEffect(() => {
@@ -49,10 +52,24 @@ function App() {
     };
   }, []);
 
+  // loading loder
+
+   const [pageLoading, setPageLoading] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setPageLoading(false);
+  }, 500);
+
+  return () => clearTimeout(timer);
+}, []);
+
+
   return (
     <div className={mode ? "dark-theme" : "light-theme"}>
 
- 
+  {/* Loader */}
+    {pageLoading && <Loder />}
 
 <Navbar mode={mode} setMode={setMode} />
 {/* <Main /> */}
