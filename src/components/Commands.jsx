@@ -149,13 +149,13 @@ const Commands = () => {
 
                 {/* git branch */}
                 <div className="git-command-item">
-                  <code>git branch</code>
+                  <code>git branch -M main</code>
 
                   <button
                     className={`git-copy-btn ${
-                      copied === "git branch" ? "copied" : ""
+                      copied === "git branch -M main" ? "copied" : ""
                     }`}
-                    onClick={() => copyCommand("git branch")}
+                    onClick={() => copyCommand("git branch -M main")}
                   >
                     <i
                       className={`fa-solid ${
@@ -172,27 +172,27 @@ const Commands = () => {
 
                 {/* git push */}
                 <div className="git-command-item">
-                  <code>git push origin main</code>
+                  <code>git push -u origin main</code>
 
                   <button
                     className={`git-copy-btn ${
-                      copied === "git push origin main"
+                      copied === "git push -u origin main"
                         ? "copied"
                         : ""
                     }`}
                     onClick={() =>
-                      copyCommand("git push origin main")
+                      copyCommand("git push -u origin main")
                     }
                   >
                     <i
                       className={`fa-solid ${
-                        copied === "git push origin main"
+                        copied === "git push -u origin main"
                           ? "fa-check"
                           : "fa-copy"
                       }`}
                     ></i>
 
-                    {copied === "git push origin main"
+                    {copied === "git push -u origin main"
                       ? "Copied"
                       : "Copy"}
                   </button>
