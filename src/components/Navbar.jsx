@@ -9,23 +9,66 @@ const Navbar = ({ mode, setMode }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
    const [search, setSearch] = useState("");
+   const [loginData, setLoginData] = useState({
+     name: "",
+     email: "",
+     password: "",
+   });
+
    const handleLogin = (e) => {
-  e.preventDefault();
+     e.preventDefault();
 
-  setShowLogin(!showLogin);
-  setShowWelcome(!showWelcome);
-};
+     // Save only non-sensitive profile details. Never store passwords.
+     const userToSave = {
+       name: loginData.name.trim(),
+       email: loginData.email.trim(),
+     };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-    alert(
-  "🚀 Ready to explore DevKit?\n\nLogin to continue and unlock the full experience."
-);
-      setShowLogin(true);
-    }, 5000);
+     localStorage.setItem("devkitUser", JSON.stringify(userToSave));
+     setShowRegister(userToSave.name);
+     setShowLogin(false);
+     setShowWelcome(true);
+     setLoginData((prev) => ({ ...prev, password: "" }));
+   };
 
-    return () => clearTimeout(timer);
-  }, []);
+   const handleLogout = () => {
+     localStorage.removeItem("devkitUser");
+     setShowRegister(false);
+     setLoginData({ name: "", email: "", password: "" });
+     setShowLogin(false);
+     setShowWelcome(false);
+   };
+
+   useEffect(() => {
+     const savedUser = localStorage.getItem("devkitUser");
+
+     if (savedUser) {
+       try {
+         const user = JSON.parse(savedUser);
+         if (user && user.name) {
+           setShowRegister(user.name);
+           setLoginData((prev) => ({
+             ...prev,
+             name: user.name || "",
+             email: user.email || "",
+           }));
+           setShowLogin(false);
+           return;
+         }
+       } catch {
+         localStorage.removeItem("devkitUser");
+       }
+     }
+
+     const timer = setTimeout(() => {
+       alert(
+         "🚀 Ready to explore DevKit?\n\nLogin to continue and unlock the full experience."
+       );
+       setShowLogin(true);
+     }, 5000);
+
+     return () => clearTimeout(timer);
+   }, []);
 
    const items = [
      "react-docs",
@@ -78,7 +121,7 @@ const Navbar = ({ mode, setMode }) => {
      
   ];
 
- const filteredItems = items.filter((item) =>
+const filteredItems = items.filter((item) =>
   item.toLowerCase().includes(search.toLowerCase())
 );
 
@@ -198,7 +241,7 @@ const Navbar = ({ mode, setMode }) => {
            <input
             id="searchInput"
             type="search"
-            className="form-control"
+            className="form-control search-suggestion"
             placeholder=" 🔎︎ Search React, Git, Tailwind..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -209,32 +252,35 @@ const Navbar = ({ mode, setMode }) => {
               id="suggestions"
               className="position-absolute bg-white shadow rounded-3 w-100 mt-2"
             >
-              {filteredItems.map((item, index) => (
-                <button
-                  type="button"
-                  key={index}
-                  className="search-item"
-                  onClick={() => {
-                    const id = item
-                      .toLowerCase()
-                      .replace(/\s+/g, "-");
+         
+{filteredItems.map((item, index) => (
+  <button
+    type="button"
+    key={index}
+    className="search-item"
+    onClick={() => {
+      const id = item
+        .toLowerCase()
+        .replace(/\s+/g, "-");
 
-                    const element = document.getElementById(id);
+      const element = document.getElementById(id);
 
-                    if (element) {
-                      element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
 
-                      setSearch("");
-                      setNavbarOpen(false);
-                    }
-                  }}
-                >
-                  {item}
-                </button>
-              ))}
+        setSearch("");
+        setNavbarOpen(false);
+      }
+    }}
+  >
+    {item.toUpperCase()}
+  </button>
+))}
+ 
+
             </div>
           )}
 
@@ -271,11 +317,13 @@ const Navbar = ({ mode, setMode }) => {
           type="button"
           className="btn btn-primary px-4 rounded-pill fw-semibold"
           onClick={() => {
-            window.location.reload();
+            if (showRegister) {
+              handleLogout();
+            } else {
+              setShowLogin(true);
+            }
           }}
         >
-          
-
           {showRegister ? "Logout" : "Login"}
         </button>
 
@@ -372,7 +420,12 @@ const Navbar = ({ mode, setMode }) => {
                 <input
                   type="text"
                   className="form-control form-control-lg"
-                  placeholder="Enter your name" onChange={(e)=>setShowRegister(e.target.value)}
+                  placeholder="Enter your name"
+                  value={loginData.name}
+                  onChange={(e) =>
+                    setLoginData({ ...loginData, name: e.target.value })
+                  }
+                  required
                 />
               </div>
 
@@ -385,6 +438,10 @@ const Navbar = ({ mode, setMode }) => {
                   type="email"
                   className="form-control form-control-lg"
                   placeholder="Enter your email"
+                  value={loginData.email}
+                  onChange={(e) =>
+                    setLoginData({ ...loginData, email: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -399,6 +456,10 @@ const Navbar = ({ mode, setMode }) => {
                   type="password"
                   className="form-control form-control-lg"
                   placeholder="Enter your password"
+                  value={loginData.password}
+                  onChange={(e) =>
+                    setLoginData({ ...loginData, password: e.target.value })
+                  }
                   required
                 />
               </div>

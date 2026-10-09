@@ -588,4 +588,6 @@
 .dark-theme .acc-name{
   color: white ! important;
 }
-
+.search-suggestion {
+  text-transform: uppercase;
+}

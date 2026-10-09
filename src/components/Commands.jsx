@@ -30,7 +30,7 @@ const Commands = () => {
       <div className="container-fluid px-3 px-lg-4" >
       
       {/* Heading */}
-          <div className="project-heading text-center mb-4 mb-md-5">
+          <div className="project-heading text-center mb-4 mb-md-5" id="cammands">
 
           <span className="project-badge right-animation">
             <i className="fa-solid fa-code"></i>
