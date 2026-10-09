@@ -1578,6 +1578,76 @@ git push</code>
           </div>
 
         </div>
+      
+{/* Install React Router */}
+
+<div className="react-command-card">
+  <div className="react-command-title">
+    <i className="fa-solid fa-route"></i>
+
+    <div>
+      <h5>Install React Router</h5>
+      <p>Install React Router for page navigation.</p>
+    </div>
+  </div>
+
+  <div className="react-command-box">
+    <code>npm install react-router-dom</code>
+
+    <button
+      className="react-copy-btn"
+      onClick={() =>
+        copyCommand(
+          "npm install react-router-dom",
+          "router-install"
+        )
+      }
+    >
+      <i
+        className={`fa-solid ${
+          copied === "router-install"
+            ? "fa-check"
+            : "fa-copy"
+        }`}
+      ></i>
+
+      {copied === "router-install" ? "Copied!" : "Copy"}
+    </button>
+  </div>
+</div>
+
+
+ 
+
+ 
+
+
+{/* Preview Production Build */}
+
+<div className="react-command-card">
+  <div className="react-command-title">
+    <i className="fa-solid fa-eye"></i>
+
+    <div>
+      <h5>Import</h5>
+      <p>in to your jsx file</p>
+    </div>
+  </div>
+
+  <div className="react-command-box">
+    <code>createBrowserRouter,<br></br>
+  RouterProvider,<br></br>
+  Link,<br></br>
+  NavLink,<br></br>
+  Outlet,<br></br>
+  useParams,<br></br>
+  useNavigate</code>
+
+   
+  </div>
+</div>
+ 
+
 
       </div>
     </section>
