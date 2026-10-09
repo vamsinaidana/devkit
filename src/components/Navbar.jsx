@@ -548,7 +548,7 @@ const filteredItems = items.filter((item) =>
           <input
             id="searchInput"
             type="search"
-            className="form-control"
+            className="form-control search-suggestion"
             placeholder=" 🔎︎ Search React, Git, Tailwind..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -582,7 +582,7 @@ const filteredItems = items.filter((item) =>
                     }
                   }}
                 >
-                  {item}
+                  {item.toUpperCase()}
                 </button>
               ))}
             </div>
